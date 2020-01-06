@@ -50,5 +50,17 @@ namespace API.Controllers
             return await _mediator.Send(new Delete.Command{Id = id});
         }
 
+        [HttpOptions("{Id}")]
+        public async Task<ActionResult<Unit>> CORSPut()
+        {
+            return Ok();
+        }
+
+        [HttpOptions()]
+        public async Task<ActionResult<Unit>> CORSPost()
+        {
+            return Ok();
+        }
+
     }
 }
