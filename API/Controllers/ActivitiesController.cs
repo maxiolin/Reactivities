@@ -51,13 +51,13 @@ namespace API.Controllers
         }
 
         [HttpOptions("{Id}")]
-        public async Task<ActionResult<Unit>> CORSPut()
+        public ActionResult<Unit> CORSPut()
         {
             return Ok();
         }
 
         [HttpOptions()]
-        public async Task<ActionResult<Unit>> CORSPost()
+        public ActionResult<Unit> CORSPost()
         {
             return Ok();
         }
