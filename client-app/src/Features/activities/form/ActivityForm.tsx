@@ -1,5 +1,5 @@
 import React, {useState, FormEvent, useContext, useEffect} from 'react'
-import { Segment, Form, Button, Grid, GridColumn } from 'semantic-ui-react'
+import { Segment, Form, Button, Grid } from 'semantic-ui-react'
 import ActivityStore from '../../../App/stores/activityStore'
 import { IActivity } from '../../../App/models/activity'
 import {v4 as uuid} from 'uuid'
