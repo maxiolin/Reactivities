@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,8 +26,9 @@ namespace API
                 var services = scope.ServiceProvider;
                 try{
                     var context = services.GetRequiredService<DataContext>();
+                    var userManager = services.GetRequiredService<UserManager<AppUser>>();
                     context.Database.Migrate();
-                    Seed.SeedData(context);
+                    Seed.SeedData(context, userManager).Wait();
                 }
                 catch (Exception ex){
                     var logger = services.GetRequiredService<ILogger<Program>>();

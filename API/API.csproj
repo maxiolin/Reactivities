@@ -1,13 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>3a3c1834-9f31-4128-9c17-9859b2ca1ecb</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="MediatR" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="3.0.0" />
@@ -15,6 +15,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
   </ItemGroup>
-
 </Project>
